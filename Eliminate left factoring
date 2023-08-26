@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+void leftFactor(char *production) {
+    int i = 0;
+    while (production[i] != '\0') {
+        if (production[i] == production[i + 1]) {
+            int j = i + 1;
+            while (production[j] != '\0') {
+                production[j] = production[j + 1];
+                j++;
+            }
+        }
+        i++;
+    }
+}
+
+int main() {
+    char production[] = "AAB|AAC|AD";
+    printf("Original production: %s\n", production);
+
+    leftFactor(production);
+
+    printf("After left factoring: %s\n", production);
+
+    return 0;
+}
