@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    char op[10];
+    char arg1[10];
+    char arg2[10];
+} Triple;
+
+int main() {
+    Triple triple[100];
+    int tripleCount = 0;
+
+    // Example triples
+    strcpy(triple[tripleCount].op, "+");
+    strcpy(triple[tripleCount].arg1, "a");
+    strcpy(triple[tripleCount].arg2, "b");
+    tripleCount++;
+
+    strcpy(triple[tripleCount].op, "*");
+    strcpy(triple[tripleCount].arg1, "t1");
+    strcpy(triple[tripleCount].arg2, "c");
+    tripleCount++;
+
+    // Display triples
+    printf("Triples:\n");
+    for (int i = 0; i < tripleCount; i++) {
+        printf("(%s, %s, %s)\n", triple[i].op, triple[i].arg1, triple[i].arg2);
+    }
+
+    return 0;
+}
