@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    char op[10];
+    char arg1[10];
+    char arg2[10];
+    char result[10];
+} Quadruple;
+
+int main() {
+    Quadruple quad[100];
+    int quadCount = 0;
+    
+    // Example quadruples
+    strcpy(quad[quadCount].op, "+");
+    strcpy(quad[quadCount].arg1, "a");
+    strcpy(quad[quadCount].arg2, "b");
+    strcpy(quad[quadCount].result, "t1");
+    quadCount++;
+    
+    strcpy(quad[quadCount].op, "*");
+    strcpy(quad[quadCount].arg1, "t1");
+    strcpy(quad[quadCount].arg2, "c");
+    strcpy(quad[quadCount].result, "t2");
+    quadCount++;
+    
+    // Display quadruples
+    printf("Quadruples:\n");
+    for (int i = 0; i < quadCount; i++) {
+        printf("(%s, %s, %s, %s)\n", quad[i].op, quad[i].arg1, quad[i].arg2, quad[i].result);
+    }
+    
+    return 0;
+}
